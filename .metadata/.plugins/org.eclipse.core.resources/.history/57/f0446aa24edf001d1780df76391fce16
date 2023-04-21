@@ -1,0 +1,7 @@
+package boot.data.dto;
+
+public class StoryDto {
+	private String snum;
+	private String photo;
+	private String unum;
+}

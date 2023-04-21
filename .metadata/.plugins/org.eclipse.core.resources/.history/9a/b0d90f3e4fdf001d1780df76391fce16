@@ -1,0 +1,20 @@
+package boot.data.dto;
+
+import java.sql.Timestamp;
+
+import org.apache.ibatis.type.Alias;
+
+import lombok.Data;
+
+@Data
+@Alias("CommentDto")
+public class CommentDto {
+	private String cnum;
+	private String content;
+	private Timestamp writeday;
+	private String regroup;
+	private String restep;
+	private String relevel;
+	private String unum;
+	private String pnum;
+}

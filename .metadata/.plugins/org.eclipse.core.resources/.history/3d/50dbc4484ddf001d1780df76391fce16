@@ -1,0 +1,15 @@
+package boot.data.soul;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@ComponentScan({"boot.data.*","boot.tiles.mini"}) //boot.* 도 가능
+@MapperScan("boot.data.mapper")
+public class SoulProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SoulProjectApplication.class, args);
+	}
+
+}

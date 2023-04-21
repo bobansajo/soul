@@ -1,0 +1,13 @@
+package boot.data.dto;
+
+import org.apache.ibatis.type.Alias;
+
+import lombok.Data;
+
+@Data
+@Alias("FollowerDto")
+public class FollowerDto {
+	private String fingnum;
+	private String unum;
+	private String funum;
+}

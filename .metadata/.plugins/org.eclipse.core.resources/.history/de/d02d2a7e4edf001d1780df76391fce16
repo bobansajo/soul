@@ -1,0 +1,11 @@
+package boot.data.dto;
+
+public class UserDto {
+	private String num;
+	private String id;
+	private String pass;
+	private String hp;
+	private String email;
+	private String name;
+	private String photo;
+}
