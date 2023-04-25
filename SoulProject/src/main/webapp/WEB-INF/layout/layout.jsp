@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&family=Sunflower&display=swap" rel="stylesheet">
 <style type="text/css">
-	body {
+	div.layout {
 		font-size: 1.3em;
 		font-family: 'Jua';
 	}
@@ -25,19 +25,10 @@
 		border: none;
 	}
 	
-	div.layout div.title{
-		position: absolute;
-		top: 10px;
-		left: 400px;
-		height: 100px;
-	}
-	
 	div.layout div.menu{
-		position: absolute;
-		top: 50px;
-		left: 250px;
-		height: 100px;
-		z-index: -1;
+		position: fixed;
+		width: 300px;
+		height: 100%;
 	}
 	
 	div.layout div.main{
@@ -51,9 +42,6 @@
 </head>
 <body>
 <div class="layout">
-	<div class="title">
-		<tiles:insertAttribute name="title"/>
-	</div>
 	<div class="menu">
 		<tiles:insertAttribute name="menu"/>
 	</div>
