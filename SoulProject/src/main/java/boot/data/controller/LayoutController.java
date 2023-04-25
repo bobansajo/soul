@@ -9,6 +9,6 @@ public class LayoutController {
 	@GetMapping("/")
 	public String start()
 	{
-		return "/layout/main";
+		return "/timeline/timelinemain";
 	}
 }
