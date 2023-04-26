@@ -14,11 +14,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&family=Sunflower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style type="text/css">
 	div.layout {
 		font-size: 1.3em;
-		font-family: 'Jua';
+		font-family: 'Noto Sans KR';
 		width: 100%;
 		height: 100%;
 	}
