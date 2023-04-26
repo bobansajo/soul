@@ -102,6 +102,9 @@ width: 100%;
         <li>
             <a href="#" class="mainMenu"><span class="glyphicon glyphicon-user" style="padding:10px;"></span>프로필</a>
         </li>
+        <li>
+            <a href="#" class="mainMenu"><span class="glyphicon glyphicon-plus-sign" style="padding:10px;"></span>만들기</a>
+        </li>
     </ul>
 </nav>
 

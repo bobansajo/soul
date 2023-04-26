@@ -25,16 +25,37 @@
 	
 	div.layout div.menu{
 		position: fixed;
-		width: 20%;
+		width: 200px;
 		height: 100%;
 	}
 	
 	div.layout div.main{
-		width: 50%;
+		max-width: 50%;
+		min-width: 300px;
 		margin: 0 auto;
 		padding-top: 3%;
 	}
 </style>
+
+<script type="text/javascript">
+
+	$(function(){
+		side_change();
+		
+		$( window ).resize(function() {
+			side_change();
+		});
+	})
+
+	function side_change(){
+		var windowWidth = $( window ).width();
+		if(windowWidth < 800) {
+			$("div.menu").hide();
+		} else {
+			$("div.menu").show();
+		}
+	}
+</script>
 </head>
 <body>
 <div class="layout">

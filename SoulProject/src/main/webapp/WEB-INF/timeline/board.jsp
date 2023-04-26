@@ -14,8 +14,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style type="text/css">
+	.boardCotainer{
+		max-width: 550px;
+		min-width: 600px;
+	}
+
+	.boardWrapper{
+		width: 500px;
+		margin: 0 auto;
+		justify-content: center;
+	}
+	
+	.boardBox{
+		margin: 0 auto;
+		border: 1px solid black;
+		width: 470px;
+		height: 400px;
+		margin-bottom: 10px;
+	}
+</style>
+
 </head>
 <body>
-보드!
+<div class="boardCotainer">
+	<div class="boardWrapper">
+		<div class="boardBox"></div>
+		<div class="boardBox"></div>
+	</div>
+</div>
 </body>
 </html>

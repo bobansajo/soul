@@ -16,12 +16,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style type="text/css">
 	.timelineContainer{
-		width: 800px;
+		max-width: 800px;
+		min-width: 600px;
 	}
 	
 	.timelinewrapper{
-		width: 350px;
+		max-width: 650px;
+		min-width: 600px;
 		margin: 0 auto;
+	}
+	
+	.tlStory{
+		margin-bottom: 10px;
 	}
 </style>
 </head>

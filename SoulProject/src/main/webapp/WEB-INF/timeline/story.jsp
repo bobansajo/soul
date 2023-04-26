@@ -14,8 +14,90 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<style type="text/css">
+	.storyCotainer{
+		max-width: 550px;
+		min-width: 600px;
+	}
+
+	.storyWrapper{
+		width: 500px;
+		margin: 0 auto;
+		justify-content: center;
+	}
+	
+	.storyBox{
+		margin: 0 auto;
+		border: 1px solid black;
+		width: 470px;
+		height: 100px;
+		overflow: hidden;
+	}
+	
+	.storySlider{
+		height: 100px;
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	
+	.storyCircle{
+		border: 1px solid black;
+		width: 60px;
+		height: 60px;
+		border-radius: 100px;
+		margin-left: 15px;
+		background: none;
+	}
+	
+	.storyMoveBtn{
+		z-index: 1;
+		background-color: lightgray;
+		border-radius: 100px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		position: relative;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	.storyPreBtn{
+		top: -60px;
+		left: 20px;
+	}
+	
+	.storyNextBtn{
+		top: -90px;
+		left: 450px;
+	}
+</style>
+
 </head>
 <body>
-스토리!
+<div class="storyCotainer">
+	<div class="storyWrapper">
+		<div class="storyBox">
+			<div class="storySlider">
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+				<div class="storyCircle"></div>
+			</div>
+		</div>
+		<div class="storyPreBtn storyMoveBtn">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</div>
+		<div class="storyNextBtn storyMoveBtn">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</div>
+	</div>
+</div>
 </body>
 </html>
