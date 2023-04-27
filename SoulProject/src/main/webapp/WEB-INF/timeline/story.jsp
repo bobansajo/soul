@@ -33,6 +33,7 @@
 		width: 470px;
 		height: 100px;
 		overflow: hidden;
+		border-radius: 10px;
 	}
 	
 	.storySlider{
@@ -41,6 +42,8 @@
 		justify-content: flex-start;
 		align-items: center;
 		flex-wrap: nowrap;
+		position: relative;
+		transition: all ease 1s 0s;
 	}
 	
 	.storyCircle{
@@ -73,7 +76,27 @@
 		top: -90px;
 		left: 450px;
 	}
+	
+	.storySlider:active {
+		/* transform: translateX(-50px); */
+		transition: all ease 1s 0s;
+	}
 </style>
+
+<script type="text/javascript">
+	$(function(){
+		i=1;
+		$("div.storyNextBtn").click(function(){
+			i=i+420;
+			$(".storySlider").css({'transform':'translateX(-'+i+'px)'});
+		})
+		
+		$("div.storyPreBtn").click(function(){
+			i=i-420;
+			$(".storySlider").css({'transform':'translateX('+i+'px)'});
+		})
+	})
+</script>
 
 </head>
 <body>
@@ -81,14 +104,46 @@
 	<div class="storyWrapper">
 		<div class="storyBox">
 			<div class="storySlider">
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구1
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구2
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구3
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구4
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구5
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구6
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구7
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구8
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구9
+				</div>
+				<div>
+					<div class="storyCircle"></div>
+					어쩌구10
+				</div>
 			</div>
 		</div>
 		<div class="storyPreBtn storyMoveBtn">

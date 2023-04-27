@@ -30,8 +30,9 @@
 	.boardBox{
 		margin: 0 auto;
 		border: 1px solid black;
+		border-radius: 10px;
 		width: 470px;
-		height: 400px;
+		height: 600px;
 		margin-bottom: 10px;
 	}
 </style>
