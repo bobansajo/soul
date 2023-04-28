@@ -12,34 +12,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 import boot.data.dto.UserDto;
 import boot.data.service.UserService;
 
+
 @Controller
 public class LoginController {
-	
+
 	@Autowired
 	UserService service;
 	
 	@GetMapping("/login/main")
 	public String loginform(HttpSession session,Model model)
 	{
+		//폼의 아이디를 얻어줌
 		String myid=(String)session.getAttribute("myid");
-		
+		//로그인상태인지 아닌지
 		String loginok=(String)session.getAttribute("loginok");
 		
 		
+		//한번도 실행안하면 null
 		if(loginok==null)
 			return "/login/loginform";
 		else {
+			
 			//로그인중일때 requset에 로그인한 이름저장하기
 			String name=service.getName(myid);
 			model.addAttribute("name", name);
 			return "/login/logoutform";
-			
 		}
+		
 		
 	}
 	
 	
-	@PostMapping("/login/loginprocess")
+	
+	@PostMapping("/user/loginprocess")
 	public String loginproc(@RequestParam String id,
 			@RequestParam String pass,
 			@RequestParam(required = false) String cbsave,
@@ -62,7 +67,7 @@ public class LoginController {
 			
 			session.setAttribute("loginphoto", dto.getUserphoto());
 			
-			return "redirect:main";
+			return "/timeline/timelinemain";
 			
 		}else {  //로그인 실패시
 			
@@ -72,13 +77,17 @@ public class LoginController {
 		
 	}
 	
-
+	
 	@GetMapping("/login/logoutprocess")
 	public String logout(HttpSession session)
 	{
 		session.removeAttribute("loginok");
 		return "redirect:main";
 	}
+	
+	
+	
+	
 	
 	
 }

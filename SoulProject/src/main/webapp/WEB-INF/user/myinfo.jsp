@@ -16,19 +16,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&family=Sunflower&display=swap" rel="stylesheet">
 </head>
 <body>
+<div>
+	<c:forEach var="dto" items="${list }">
 	
-	<div style="margin-left: 100px; margin-top: 100px;">
-	<img alt="" src="../image/no.png" width="200" align="left" hspace="20">
-	<br><br>
-	
-	<!-- id에따른 이름(name)받아 표시 -->
-	<B>${name }님 로그인중</B> <br><br>
+	<b>회원명 : ${dto.name}</b>
 	
 	
 	
-	<button type="button" class="btn btn-danger"
-	onclick="location.href='logoutprocess'">로그아웃</button> 
-	</div>
 	
+	</c:forEach>
+	
+
+
+
+</div>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ public class LayoutController {
 	}
 	
 	@GetMapping("/user/login")
-	public String login()
+	public String userlogin()
 	{
 		return  "layout2/login/loginform";
 	}

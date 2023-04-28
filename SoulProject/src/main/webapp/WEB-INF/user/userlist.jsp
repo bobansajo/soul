@@ -74,10 +74,10 @@ $(function() {
   <caption><b>전체 회원명단</b></caption>
    <tr style="background-color: #ddd">
        <th style="width: 50px;">번호</th>
-       <th style="width: 200px;">이름</th>
        <th style="width: 100px;">아이디</th>
+        <th style="width: 120px;">핸드폰</th>
+       <th style="width: 200px;">이름</th>
        <th style="width: 120px;">핸드폰</th>
-       <th style="width: 350px;">주소</th>
        <th style="width: 200px;">이메일</th>
        <th style="width: 50px;">
          <input type="checkbox" id="allcheck">

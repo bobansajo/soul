@@ -26,7 +26,7 @@
 
 
 	<!--id와 pass 파라메타로 넘겨서 (map) 1 or 0 -->
-	<select id="loginIdPassCheck" parameterType="Map" resultType="int">
+	<select id="LoginIdPassCheck" parameterType="Map" resultType="int">
 		select count(*) from user where id=#{id} and pass=#{pass}
 	</select>
 
