@@ -13,35 +13,22 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-
-<style type="text/css">
-	.boardCotainer{
-		max-width: 550px;
-		min-width: 600px;
-	}
-	.boardWrapper{
-		width: 500px;
-		margin: 0 auto;
-		justify-content: center;
-	}
-	
-	.boardBox{
-		margin: 0 auto;
-		border: 1px solid black;
-		width: 470px;
-		height: 400px;
-		margin-bottom: 10px;
-	}
-</style>
-
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&family=Sunflower&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="boardCotainer">
-	<div class="boardWrapper">
-		<div class="boardBox"></div>
-		<div class="boardBox"></div>
+	<c:set var="root" value="<%=request.getContextPath()%>" />
+	<div style="margin-left: 100px; margin-top: 100px;">
+	<img alt="" src="${root }/image/no.png" width="200" align="left" hspace="20">
+	<br><br>
+	
+	<!-- id에따른 이름(name)받아 표시 -->
+	<B>${name }님 로그인중</B> <br><br>
+	
+	
+	
+	<button type="button" class="btn btn-danger"
+	onclick="location.href='logoutprocess'">로그아웃</button> 
 	</div>
-</div>
+	
 </body>
 </html>

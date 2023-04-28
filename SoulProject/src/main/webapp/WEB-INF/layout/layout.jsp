@@ -65,7 +65,6 @@ div.layout div.main {
 </style>
 
 <script type="text/javascript">
-
 	$(function(){
 		side_change();
 		
@@ -73,7 +72,6 @@ div.layout div.main {
 			side_change();
 		});
 	})
-
 	function side_change(){
 		var windowWidth = $( window ).width();
 		if(windowWidth < 800) {
