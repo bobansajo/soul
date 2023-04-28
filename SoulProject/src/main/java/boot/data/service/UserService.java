@@ -42,8 +42,8 @@ public class UserService implements UserServiceInter {
 	@Override
 	public int LoginIdPassCheck(String id, String pass) {
 		Map<String, String> map=new HashMap<>();
-		map.put(id, id);
-		map.put(pass, pass);
+		map.put("id", id);
+		map.put("pass", pass);
 		return umapper.LoginIdPassCheck(map);
 	}
 

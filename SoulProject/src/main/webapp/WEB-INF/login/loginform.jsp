@@ -51,12 +51,12 @@ a{
 			<input type="checkbox" name="cbsave"   
 			${sessionScope.saveok==null?"":"checked" }><b style="font-size: 15px; margin-right: 200px;">아이디저장</b>
 			<br>
-<button type="submit" class="btn btn-info" style="width: 300px; margin-bottom: 80px;">로그인</button>
+<button type="submit" class="btn btn-info" style="width: 300px; margin-bottom: 50px;">로그인</button>
 
 </form>
  
 
- <a href="#" style="  color: black; text-decoration: none; "><b style="font-size: 15px; ">비밀번호를 잃어버리셨나요?</b></a>
+ <a href="#" style="  color: black; text-decoration: none; "><b style="font-size: 15px; margin-bottom: 10px;">비밀번호를 잃어버리셨나요?</b></a>
  
 
 </div>

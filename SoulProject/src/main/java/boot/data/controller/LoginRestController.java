@@ -19,7 +19,7 @@ public class LoginRestController {
 	@Autowired
 	UserService service;
 	
-	@GetMapping("/user/login1")
+	@GetMapping("/user/userlogin")
 	public Map<String,String> loginproc(String id , String pass,HttpSession session)
 	{ 
 		
@@ -31,13 +31,13 @@ public class LoginRestController {
 			//아이디와 비밀번호 일치하면 세션유지설정
 			session.setMaxInactiveInterval(60*60*4); //4시간
 			//로그인한 정보얻기 
-			UserDto mdto=service.getDataById(id);
+			UserDto dto=service.getDataById(id);
 			
 			
 			session.setAttribute("loginok", "yes");
 			session.setAttribute("myid", id);
-			session.setAttribute("loginphoto",mdto.getUserphoto() );
-			session.setAttribute("loginname",mdto.getName() );
+			session.setAttribute("loginphoto",dto.getUserphoto() );
+			session.setAttribute("loginname",dto.getName() );
 			
 			
 			
@@ -51,7 +51,7 @@ public class LoginRestController {
 	
 	//로그아웃
 	
-	@GetMapping("/member/logout")
+	@GetMapping("/user/logout")
 	public void logoutproc(HttpSession session)
 	{
 		//로그아웃때 제거 되어야할 세션

@@ -23,20 +23,24 @@ padding-top: 3%;
 "text-decoration: none;
 }
 #showimg{
-			border: 1px solid gray;
-			width: 130px;
-			height: 160px;
+border: 2px solid gray;
+width: 150px;
+height: 160px;
+margin-top: 30px;
+border-radius: 100%;
+}
+#golist{
+
+margin: 0 auto;
+
+}
+
+
 
 </style>
 
 
-<style type="text/css">
-		#showimg{
-			border: 1px solid gray;
-			width: 130px;
-			height: 160px;
-		}
-</style>
+
 <script type="text/javascript">
   $(function(){
 	  
@@ -139,8 +143,8 @@ padding-top: 3%;
 
 </head>
 <body>
- 	<button type="button" class="btn btn-info" 
-onclick="location.href='userlist'">전체 회원 목록</button>
+ 	<button type="button" class="btn btn-info" id="golist" 
+onclick="location.href='list'">전체 회원 목록</button>
 
 <form action="userinsert" method="post" enctype="multipart/form-data" onsubmit="return check()">
    <table class="table table-bordered" style="width: 600px; margin: 0 auto; padding-top: 3%">
@@ -155,7 +159,7 @@ onclick="location.href='userlist'">전체 회원 목록</button>
            <td style="width: 200px;" rowspan="5" align="center">
              <input type="file" id="myphoto" name="myphoto" style="display: none;">
                <button type="button" id="btnphoto" class="btn btn-success">프로필 사진 선택하기 </button>
-					<img id="showimg" style=" border-radius: 100%; border: 1px solid; black" >
+					<img id="showimg" >
            </td>
            
            <td>
@@ -236,7 +240,7 @@ onclick="location.href='userlist'">전체 회원 목록</button>
 <div id="logingo" style="width: 400px; height: 65px;" align="center">
 <b style="color: black">계정이 있으신가요?</b> 
 &nbsp;
-<a href="#" style="text-decoration: none;"><b style="color: blue;" >로그인 하기 </b></a>
+<a href="login" style="text-decoration: none;"><b style="color: blue;" >로그인 하기 </b></a>
 </div>
 </body>
 </html>
