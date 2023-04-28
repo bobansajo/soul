@@ -12,7 +12,7 @@ public class LayoutController {
 	{
 
 		return "redirect:/user/login";
-
+		/* return "/timeline/timelinemain"; */
 
 	}
 	
