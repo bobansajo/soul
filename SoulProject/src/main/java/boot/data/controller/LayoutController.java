@@ -9,6 +9,28 @@ public class LayoutController {
 	@GetMapping("/")
 	public String start()
 	{
-		return "/timeline/timelinemain";
+
+		return "redirect:/user/login";
+
+
 	}
+	
+	@GetMapping("/user/login")
+	public String login()
+	{
+		return  "layout2/login/loginform";
+	}
+	
+	
+	
+	@GetMapping("/user/userinsert")
+	public String insert()
+	{
+		return "layout2/login/loginform";
+	}
+	
+	
+	
+	
+	
 }

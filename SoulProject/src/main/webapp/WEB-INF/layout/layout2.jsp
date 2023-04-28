@@ -23,12 +23,6 @@
 		height: 100%;
 	}
 	
-	div.layout div.menu{
-		position: fixed;
-		width: 200px;
-		height: 100%;
-	}
-	
 	div.layout div.main{
 		max-width: 50%;
 		min-width: 300px;
@@ -37,29 +31,9 @@
 	}
 </style>
 
-<script type="text/javascript">
-	$(function(){
-		side_change();
-		
-		$( window ).resize(function() {
-			side_change();
-		});
-	})
-	function side_change(){
-		var windowWidth = $( window ).width();
-		if(windowWidth < 800) {
-			$("div.menu").hide();
-		} else {
-			$("div.menu").show();
-		}
-	}
-</script>
 </head>
 <body>
 <div class="layout">
-	<div class="menu">
-		<tiles:insertAttribute name="menu"/>
-	</div>
 	<div class="main">
 		<tiles:insertAttribute name="main"/>
 	</div>
