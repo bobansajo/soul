@@ -48,15 +48,18 @@
 	
 	.storyCircle{
 		border: 1px solid black;
-		width: 60px;
-		height: 60px;
+		width: 55px;
+		height: 55px;
+		margin-bottom: 5px;
 		border-radius: 100px;
-		margin-left: 15px;
 		background: none;
 	}
 	
-	.storyMoveBtn{
+	.sotryBtnBox{
 		z-index: 1;
+	}
+	
+	.storyMoveBtn{
 		background-color: lightgray;
 		border-radius: 100px;
 		width: 30px;
@@ -77,9 +80,11 @@
 		left: 450px;
 	}
 	
-	.storySlider:active {
-		/* transform: translateX(-50px); */
-		transition: all ease 1s 0s;
+	.storyObject{
+		text-align: center;
+		margin-left: 15px;
+		font-size: 9pt;
+		color: gray;
 	}
 </style>
 
@@ -104,53 +109,19 @@
 	<div class="storyWrapper">
 		<div class="storyBox">
 			<div class="storySlider">
-				<div>
+				<div class="storyObject">
 					<div class="storyCircle"></div>
-					어쩌구1
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구2
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구3
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구4
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구5
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구6
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구7
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구8
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구9
-				</div>
-				<div>
-					<div class="storyCircle"></div>
-					어쩌구10
+					<span class="storyWriter">내 스토리</span>
 				</div>
 			</div>
 		</div>
-		<div class="storyPreBtn storyMoveBtn">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</div>
-		<div class="storyNextBtn storyMoveBtn">
-			<span class="glyphicon glyphicon-chevron-right"></span>
+		<div class="sotryBtnBox">
+			<div class="storyPreBtn storyMoveBtn">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</div>
+			<div class="storyNextBtn storyMoveBtn">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</div>
 		</div>
 	</div>
 </div>
