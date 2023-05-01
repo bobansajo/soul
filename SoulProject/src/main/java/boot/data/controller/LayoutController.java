@@ -6,6 +6,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LayoutController {
+	
+	//임시: 삭제할 거!
+	@GetMapping("/timeline")
+	public String timeline()
+	{
+
+		return "/timeline/timelinemain";
+
+
+	}
+	////////
 
 	@GetMapping("/")
 	public String start()

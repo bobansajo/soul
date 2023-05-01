@@ -85,7 +85,6 @@ width: 100%;
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath()%>" />
->>>>>>> e3c2ef041f7ed7d7b33e1bd1688ef07e1d7778f9
 
 <div class="logo">
  <img alt="logo" src="/image/soullogo.png" style="width:120px;">
