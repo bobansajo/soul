@@ -13,9 +13,23 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Stylish&family=Sunflower&display=swap" rel="stylesheet">
 </head>
 <body>
-메인페이지
+<div>
+	<c:forEach var="dto" items="${list }">
+	
+	<b>회원명 : ${dto.name}</b>
+	
+	
+	
+	
+	</c:forEach>
+	
+
+
+
+</div>
+
 </body>
-</html>>
+</html>

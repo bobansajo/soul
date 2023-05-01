@@ -20,7 +20,6 @@
 		max-width: 550px;
 		min-width: 600px;
 	}
-
 	.boardWrapper{
 		width: 500px;
 		margin: 0 auto;
