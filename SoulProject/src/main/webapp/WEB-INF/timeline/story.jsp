@@ -32,6 +32,7 @@
 		width: 470px;
 		height: 100px;
 		overflow: hidden;
+		border-radius: 10px;
 	}
 	
 	.storySlider{
@@ -40,19 +41,24 @@
 		justify-content: flex-start;
 		align-items: center;
 		flex-wrap: nowrap;
+		position: relative;
+		transition: all ease 1s 0s;
 	}
 	
 	.storyCircle{
 		border: 1px solid black;
-		width: 60px;
-		height: 60px;
+		width: 55px;
+		height: 55px;
+		margin-bottom: 5px;
 		border-radius: 100px;
-		margin-left: 15px;
 		background: none;
 	}
 	
-	.storyMoveBtn{
+	.sotryBtnBox{
 		z-index: 1;
+	}
+	
+	.storyMoveBtn{
 		background-color: lightgray;
 		border-radius: 100px;
 		width: 30px;
@@ -72,7 +78,29 @@
 		top: -90px;
 		left: 450px;
 	}
+	
+	.storyObject{
+		text-align: center;
+		margin-left: 15px;
+		font-size: 9pt;
+		color: gray;
+	}
 </style>
+
+<script type="text/javascript">
+	$(function(){
+		i=1;
+		$("div.storyNextBtn").click(function(){
+			i=i+420;
+			$(".storySlider").css({'transform':'translateX(-'+i+'px)'});
+		})
+		
+		$("div.storyPreBtn").click(function(){
+			i=i-420;
+			$(".storySlider").css({'transform':'translateX('+i+'px)'});
+		})
+	})
+</script>
 
 </head>
 <body>
@@ -80,21 +108,19 @@
 	<div class="storyWrapper">
 		<div class="storyBox">
 			<div class="storySlider">
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
-				<div class="storyCircle"></div>
+				<div class="storyObject">
+					<div class="storyCircle"></div>
+					<span class="storyWriter">내 스토리</span>
+				</div>
 			</div>
 		</div>
-		<div class="storyPreBtn storyMoveBtn">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</div>
-		<div class="storyNextBtn storyMoveBtn">
-			<span class="glyphicon glyphicon-chevron-right"></span>
+		<div class="sotryBtnBox">
+			<div class="storyPreBtn storyMoveBtn">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</div>
+			<div class="storyNextBtn storyMoveBtn">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</div>
 		</div>
 	</div>
 </div>
