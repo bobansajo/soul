@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boot.data.mapper.StoryMapperInter">
+	<insert id="insertStory" parameterType="StoryDto">
+		insert into story values(null,#{photo},#{unum})
+	</insert>
+	<select id="selectStoryFollow" parameterType="String" resultType="Map">
+		select DISTINCT s.unum as unum, u.id as id, u.userphoto as userphoto 
+		from story s,user u 
+		where (s.unum=#{unum} or s.unum=any(select touser from follow where fromuser=#{unum})) and s.unum=u.unum;
+	</select>
+	<select id="selectOneStory" parameterType="String" resultType="StoryDto">
+		select * from story where unum=#{unum}
+	</select>
+</mapper>

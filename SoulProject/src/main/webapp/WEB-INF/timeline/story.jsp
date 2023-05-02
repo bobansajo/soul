@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,12 +47,17 @@
 	}
 	
 	.storyCircle{
-		border: 1px solid black;
+		/* border: 1px solid black; */
 		width: 55px;
 		height: 55px;
 		margin-bottom: 5px;
 		border-radius: 100px;
 		background: none;
+	}
+	
+	.storyCircle img{
+		width: 55px;
+		height: 55px;
 	}
 	
 	.sotryBtnBox{
@@ -85,19 +91,62 @@
 		font-size: 9pt;
 		color: gray;
 	}
+	
+	#storyAddBtn{
+		background-color: skyblue;
+		border: 2px solid white;
+		border-radius: 100px;
+		width: 25px;
+		height: 25px;
+		line-height: 20px;
+		text-align: center;
+		z-index: 1;
+		position: relative;
+		top: -20px;
+		left: 35px;
+		cursor: pointer;
+	}
+	
+	.showDetailStory{
+		cursor: pointer;
+	}
 </style>
 
 <script type="text/javascript">
 	$(function(){
-		i=1;
+		i=0;
 		$("div.storyNextBtn").click(function(){
-			i=i+420;
-			$(".storySlider").css({'transform':'translateX(-'+i+'px)'});
+			i=i-420;
+			$(".storySlider").css({'transform':'translateX('+i+'px)'});
 		})
 		
 		$("div.storyPreBtn").click(function(){
-			i=i-420;
+			i=i+420;
 			$(".storySlider").css({'transform':'translateX('+i+'px)'});
+		})
+		
+		//스토리 업로드
+		$("#storyUploadBtn").click(function(){
+			var form=new FormData();
+			form.append("upload",$("#storyUploadPhoto")[0].files[0]); //선택한 1개만 추가
+			//선택한 사진 전달(unum은 로그인한 유저 정보 사용)
+			$.ajax({
+				type:"post",
+				dataType:"text",
+				url:"storyinsert",
+				processData:false, //formData를 보낼 때 false로 지정해준다(기본이 true)
+				contentType:false,
+				data:form,
+				success:function(){
+					location.reload();
+				}
+			})
+		})
+		
+		//스토리 디테일 페이지 열기
+		$(".showDetailStory").click(function(){
+			//alert($(this).attr("unum"));
+			location.href='../story/list?unum='+$(this).attr("unum");
 		})
 	})
 </script>
@@ -108,10 +157,37 @@
 	<div class="storyWrapper">
 		<div class="storyBox">
 			<div class="storySlider">
+			
+			<!-- 스토리 추가버튼 -->
 				<div class="storyObject">
-					<div class="storyCircle"></div>
+					<div class="storyCircle">
+						<c:if test="${sessionScope.loginphoto=='no' }">
+							<img alt="사용자 이미지" src="/image/nouser.jpg">
+						</c:if>
+						<c:if test="${sessionScope.loginphoto!='no' }">
+							<img alt="사용자 이미지" src="/photo/${sessionScope.loginphoto }">
+						</c:if>
+						<div id="storyAddBtn" data-toggle="modal" data-target="#storyModal">
+							<span class="glyphicon glyphicon-plus"></span>
+						</div>
+					</div>
 					<span class="storyWriter">내 스토리</span>
 				</div>
+				
+				<!-- 스토리 나열 -->
+				<c:forEach items="${storyList }" var="userInfo">
+					<div class="storyObject">
+						<div class="storyCircle showDetailStory" unum=${userInfo.unum }>
+							<c:if test="${userInfo.userphoto=='no' }">
+								<img alt="사용자 이미지" src="/image/nouser.jpg">
+							</c:if>
+							<c:if test="${userInfo.userphoto!='no' }">
+								<img alt="사용자 이미지" src="/photo/${userInfo.userphoto }">
+							</c:if>
+						</div>
+						<span class="storyWriter showDetailStory" unum=${userInfo.unum }>${userInfo.id }</span>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 		<div class="sotryBtnBox">
@@ -124,5 +200,28 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="storyModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">스토리</h4>
+        </div>
+        <div class="modal-body">
+          <h4>스토리 사진 선택</h4>
+          <input type="file" required="required" id="storyUploadPhoto">
+        </div>
+        <div class="modal-footer">
+        	<button type="button" class="btn btn-default" id="storyUploadBtn">업로드</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </body>
 </html>
